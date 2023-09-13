@@ -25,6 +25,9 @@ import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.compon
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { ProdutoListComponent } from './produto/produto-list/produto-list.compon
     UsuarioFormComponent,
     ProdutoComponent,
     ProdutoFormComponent,
-    ProdutoListComponent
+    ProdutoListComponent,
+    ClienteComponent,
+    ClienteFormComponent,
+    ClienteListComponent
   
   ],
   imports: [

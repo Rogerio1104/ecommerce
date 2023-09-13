@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { UsuarioService } from '../usuario.service';
 import { ActivatedRoute } from '@angular/router';
-=======
->>>>>>> 4b0a89a (salvando)
 
 @Component({
   selector: 'app-usuario-form',
@@ -11,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./usuario-form.component.scss']
 })
 export class UsuarioFormComponent {
-<<<<<<< HEAD
   public indice:string    = '';
   public nome:string = "";
   public email:string = "";
@@ -46,7 +42,3 @@ console.log(dados)
     }
   }
 }
-=======
-
-}
->>>>>>> 4b0a89a (salvando)

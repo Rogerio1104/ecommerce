@@ -1,0 +1,59 @@
+<div style="display:flex;justify-content: right;">
+    <button 
+        class="btn btn-success"
+        (click)="salvar()"
+    >
+        <span class="bi bi-check"></span>
+        Salvar
+    </button>
+</div>
+<!-- Vertical Form -->
+<form class="row g-3">
+    <div class="col-12">  
+        <label for="nome" class="form-label">Nome</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="nome" 
+        name="nome"
+        id="nome"
+        >
+    </div>
+    <div class="col-12">
+        <label for="nome" class="form-label">CPF</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="cpf" 
+        name="cpf"
+        id="cpf"
+        >
+    </div>
+    <div class="col-12">
+        <label for="nome" class="form-label">Data Nascimento</label>
+        <input
+        class="form-control" 
+        [(ngModel)]="dtnasci" 
+        name="dtnasci"
+        id="dtnasci"
+        >
+    </div>
+    <div class="col-12">
+        <label for="nome" class="form-label">Celular</label>
+        <input
+        class="form-control" 
+        [(ngModel)]="celular" 
+        name="celular"
+        id="celular"
+        >
+    </div>
+    <div class="col-12">
+        <label for="nome" class="form-label">E-mail</label>
+        <input
+        class="form-control" 
+        [(ngModel)]="email" 
+        name="email"
+        id="email"
+        >
+    </div>
+</form><!-- Vertical Form -->
