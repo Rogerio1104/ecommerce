@@ -18,16 +18,16 @@ import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
-import { SubcategoriaListComponent } from './subcategoria/subcategoria-list/subcategoria-list.component';
-import { UsuarioComponent } from './usuario/usuario.component';
-import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
-import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosListarComponent } from './usuarios/usuarios-listar/usuarios-listar.component';
+import { UsuariosFormComponent } from './usuarios/usuarios-form/usuarios-form.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
-import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
-import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
+import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
 
 @NgModule({
   declarations: [
@@ -44,17 +44,16 @@ import { ClienteListComponent } from './cliente/cliente-list/cliente-list.compon
     FormaPagamentoFormComponent,
     SubcategoriaComponent,
     SubcategoriaFormComponent,
-    SubcategoriaListComponent,
-    UsuarioComponent,
-    UsuarioListComponent,
-    UsuarioFormComponent,
+    SubcategoriaListarComponent,
+    UsuariosComponent,
+    UsuariosListarComponent,
+    UsuariosFormComponent,
     ProdutoComponent,
+    ProdutoListarComponent,
     ProdutoFormComponent,
-    ProdutoListComponent,
     ClienteComponent,
     ClienteFormComponent,
-    ClienteListComponent
-  
+    ClienteListarComponent
   ],
   imports: [
     BrowserModule,

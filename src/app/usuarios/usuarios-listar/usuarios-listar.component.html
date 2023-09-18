@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-10">
-        <h3>Lista de usuários</h3>
+        <h3>Usuários</h3>
     </div>
     <div class="col-md-2 text-end">
         <button id="cadastrar" name="cadastrar" type="button" class="btn btn-success" routerLink="../form"  >Cadastrar</button>
@@ -11,21 +11,22 @@
     <thead>
         <tr>
             <th width="10%" class="text-center" scope="col">#</th>
-            <th width="50%" scope="col">Nome</th>
-            <th width="50%"  scope="col">E-mail</th>
+            <th width="69%" scope="col">Nome</th>
+            <th width="69%" scope="col">email</th>
+            <th width="3%"  scope="col"></th>
             <th width="3%"  scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let usuario of dados">
+        <tr *ngFor="let usuarios of dados">
             <td class="text-center" scope="row"><a href="#">01</a></td>
-            <td scope="row"><a href="#" class="text-primary"> {{ usuario.nome }}</a></td>
-            <td scope="row"><a href="#" class="text-primary"> {{ usuario.email }}</a></td>
+            <td scope="row"><a href="#" class="text-primary">{{ usuarios.nome }}</a></td>
+            <td scope="row"><a href="#" class="text-primary">{{ usuarios.email }}</a></td>
             <td scope="row">
-                <button type="button" class="btn btn-primary " (click)="editar(usuario.indice)"><i class="bi bi-pencil-fill"></i></button>
+                <button type="button" class="btn btn-primary " (click)="editar(usuarios.indice)"><i class="bi bi-pencil-fill"></i></button>
             </td>
             <td scope="row">
-                <button type="button" class="btn btn-danger" (click)="excluir(usuario.indice)"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-danger" (click)="excluir(usuarios.indice)"><i class="bi bi-trash"></i></button>
             </td>
         </tr>
     </tbody>

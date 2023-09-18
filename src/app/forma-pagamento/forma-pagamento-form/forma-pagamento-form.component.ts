@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoBootstrap } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoriaService } from 'src/app/categoria/categoria.service';
 import { FormaPagamentoService } from '../forma-pagamento.service';
@@ -11,7 +11,7 @@ import { FormaPagamentoService } from '../forma-pagamento.service';
 export class FormaPagamentoFormComponent {
 
   public indice:string    = '';
-  public descricao:string = "";
+  public descricao:string = ""; 
 
   constructor(
     public forma_pagamento_service: FormaPagamentoService,
@@ -31,6 +31,11 @@ export class FormaPagamentoFormComponent {
   salvar() {
     let dados = {
       descricao:this.descricao
+    }
+
+    if(dados.descricao == '') {
+      document.querySelector('#descricao')?.classList.add('has-error');
+      return;
     }
 
     if(this.indice == '') {

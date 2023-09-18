@@ -7,29 +7,32 @@ import { FirebaseService } from '../firebase.service';
 export class ProdutoService {
 
   constructor(
-    public firebase_service:FirebaseService) { }
-ref(){
-  return this.firebase_service.ref().child('/produto')
-}
-salvar(dados:any) {
-  this.ref().push(dados).then();
-}
+    public firebase_service:FirebaseService
+  ) { }
 
-listar() {
-  return this.ref();
-}
-
-excluir(indice:string){
-  this
-  .ref()
-  .child('/' + indice)
-  .remove()
-  .then();
-}
-
-editar(indice:string,dados:any){
-  this.ref().child('/' + indice)
-  .update(dados)
-  .then();
-}
+  ref () {
+    return this.firebase_service.ref().child('/produto');
   }
+
+  salvar(dados:any) {
+    this.ref().push(dados).then();
+  }
+
+  listar() {
+    return this.ref();
+  }
+
+  excluir(indice:string){
+    this
+    .ref()
+    .child('/' + indice)
+    .remove()
+    .then();
+  }
+
+  editar(indice:string,dados:any){
+    this.ref().child('/' + indice)
+    .update(dados)
+    .then();
+  }
+}

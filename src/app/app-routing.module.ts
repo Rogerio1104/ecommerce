@@ -8,17 +8,14 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
-import { SubcategoriaListComponent } from './subcategoria/subcategoria-list/subcategoria-list.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
-import { UsuarioComponent } from './usuario/usuario.component';
-import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
-import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosListarComponent } from './usuarios/usuarios-listar/usuarios-listar.component';
+import { UsuariosFormComponent } from './usuarios/usuarios-form/usuarios-form.component';
 import { ProdutoComponent } from './produto/produto.component';
-import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
-import { ClienteComponent } from './cliente/cliente.component';
-import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
-import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -41,37 +38,29 @@ const routes: Routes = [
     ]
   },
   { path:'subcategoria', component:SubcategoriaComponent,
-  children:[
-    { path:'', redirectTo:'listar', pathMatch:'full'},
-    { path:'listar', component:SubcategoriaListComponent },
-    { path:'form', component:SubcategoriaFormComponent },
-    { path:'form/:indice', component:SubcategoriaFormComponent },
-  ]
-},
-{ path:'usuario', component:UsuarioComponent,
-  children:[
-    { path:'', redirectTo:'listar', pathMatch:'full'},
-    { path:'listar', component:UsuarioListComponent },
-    { path:'form', component:UsuarioFormComponent },
-    { path:'form/:indice', component:UsuarioFormComponent },
-  ]
-},
-{ path:'produto', component:ProdutoComponent,
-  children:[
-    { path:'', redirectTo:'listar', pathMatch:'full'},
-    { path:'listar', component:ProdutoListComponent },
-    { path:'form', component:ProdutoFormComponent },
-    { path:'form/:indice', component:ProdutoFormComponent },
-  ]
-},
-{ path:'cliente', component:ClienteComponent,
-  children:[
-    { path:'', redirectTo:'listar', pathMatch:'full'},
-    { path:'listar', component:ClienteListComponent },
-    { path:'form', component:ClienteFormComponent },
-    { path:'form/:indice', component:ClienteFormComponent },
-  ]
-}
+    children:[
+      { path:'', redirectTo:'listar', pathMatch:'full'},
+      { path:'listar', component:SubcategoriaListarComponent },
+      { path:'form', component:SubcategoriaFormComponent },
+      { path:'form/:indice', component:SubcategoriaFormComponent },
+    ]
+  },
+  { path:'usuarios', component:UsuariosComponent,
+    children:[
+      { path:'', redirectTo:'listar', pathMatch:'full'},
+      { path:'listar', component:UsuariosListarComponent },
+      { path:'form', component:UsuariosFormComponent },
+      { path:'form/:indice', component:UsuariosFormComponent },
+    ]
+  } ,
+  { path:'produto', component:ProdutoComponent,
+    children:[
+      { path:'', redirectTo:'listar', pathMatch:'full'},
+      { path:'listar', component:ProdutoListarComponent },
+      { path:'form', component:ProdutoFormComponent },
+      { path:'form/:indice', component:ProdutoFormComponent },
+    ]
+  }
 ];
 
 @NgModule({

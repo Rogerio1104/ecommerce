@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProdutoService } from '../produto.service';
 import { ActivatedRoute } from '@angular/router';
 import { CategoriaService } from 'src/app/categoria/categoria.service';
 import { SubcategoriaService } from 'src/app/subcategoria/subcategoria.service';
@@ -9,59 +10,63 @@ import { SubcategoriaService } from 'src/app/subcategoria/subcategoria.service';
   styleUrls: ['./produto-form.component.scss']
 })
 export class ProdutoFormComponent {
-  public indice:string    = '';
-  public nome:string = '';
-  public preco:number = 0;
-  public descricao:string = '';
-  public categoria:string = '';
-  public subcategoria:string = '';
+
   public categorias:Array<any> = [];
   public subcategorias:Array<any> = [];
-  public is_desabilidado:boolean = true;
-  constructor(
-    public categoria_service:CategoriaService,
-    public subcategoria_service:SubcategoriaService,
-    public activated_route:ActivatedRoute
-  ){
-    this.listarCategoria();
-    this.activated_route.params
-    .subscribe(
-      (params:any) => {
-        // Caso seja um registro novo
-        // interronper o método
-        if (params.indice == undefined) return;
 
-        this.categoria_service.ref()
-        .child('/' + params.indice)
-        .on('value',(snapshot:any) => {
-          let dado:any    = snapshot.val();
-          this.indice     = params.indice;
-          this.descricao  = dado.descricao;
-        });
-      }
-    );
+  public indice:string    = '';
+  public nome:string = ""; 
+  public preco:string = ""; 
+  public descricao:string = ""; 
+  public categoria:string = ""; 
+  public subcategoria:string = ""; 
+  public is_desabilidado:boolean = true;
+
+  constructor(
+    public produto_service: ProdutoService,
+    public activated_route:ActivatedRoute,
+    public categoria_service:CategoriaService,
+    public subcategoria_service: SubcategoriaService
+  ) {
+    this.listarCategoria();
+    this.activated_route.params.subscribe( (params:any)=> {
+      if(params.indice == undefined) return;
+
+      this.produto_service.ref().child('/' + params.indice).on('value', (snapshot:any)=> {
+        let dados:any  = snapshot.val();
+        this.indice    = params.indice;
+        this.nome      = dados.nome;
+        this.preco     = dados.preco;
+        this.descricao = dados.descricao;
+        this.categoria = dados.categoria;
+        this.listarSubcategoria(dados.categoria);
+        this.subcategoria = dados.subcategoria;
+      });
+
+      this.is_desabilidado = false;
+    });
+
   }
-  
-  salvar(){
+
+  salvar() {
     let dados = {
+      nome:this.nome,
       descricao:this.descricao,
-      nome: this.nome,
-      preco: this.preco,
-      categoria: this.categoria,
-      subcategoria: this.subcategoria
-    };
-    if (dados.descricao == ''){
-      document.querySelector('#descricao')
-      ?.classList.add('has-error');
+      preco:this.preco,
+      categoria:this.categoria,
+      subcategoria:this.subcategoria
+    }
+
+    if(dados.descricao == '') {
+      document.querySelector('#descricao')?.classList.add('has-error');
       return;
     }
 
-    if (this.indice == ''){    
-      this.categoria_service.salvar(dados);
-    }else{
-      this.categoria_service.editar(this.indice,dados);
+    if(this.indice == '') {
+      this.produto_service.salvar(dados);
+    } else {
+      this.produto_service.editar(this.indice,dados);
     }
-    //this.descricao = '';
   }
 
   listarCategoria(){
