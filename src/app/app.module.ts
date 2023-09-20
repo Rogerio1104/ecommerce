@@ -12,7 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
@@ -28,6 +28,15 @@ import { ProdutoFormComponent } from './produto/produto-form/produto-form.compon
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { PedidoListarComponent } from './pedido/pedido-listar/pedido-listar.component';
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
+import { EstadoComponent } from './estado/estado.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { FornecedorListarComponent } from './fornecedor/fornecedor-listar/fornecedor-listar.component';
+import { FornecedorFormComponent } from './fornecedor/fornecedor-form/fornecedor-form.component';
+import { EstadoListarComponent } from './estado/estado-listar/estado-listar.component';
+import { EstadoFormComponent } from './estado/estado-form/estado-form.component';
 
 @NgModule({
   declarations: [
@@ -53,23 +62,33 @@ import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.
     ProdutoFormComponent,
     ClienteComponent,
     ClienteFormComponent,
-    ClienteListarComponent
+    ClienteListarComponent,
+    PedidoComponent,
+    PedidoListarComponent,
+    PedidoFormComponent,
+    EstadoComponent,
+    FornecedorComponent,
+    FornecedorListarComponent,
+    FornecedorFormComponent,
+    EstadoListarComponent,
+    EstadoFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyDWdr1EtJADmqXh4Mk6owTSNvVC06OGeVQ",
-      authDomain: "ecommerce-900f5.firebaseapp.com",
-      databaseURL: "https://ecommerce-900f5-default-rtdb.firebaseio.com",
-      projectId: "ecommerce-900f5",
-      storageBucket: "ecommerce-900f5.appspot.com",
-      messagingSenderId: "707874434454",
-      appId: "1:707874434454:web:62ca3d52ebad3bbe9881b7",
-      measurementId: "G-SKDF19S665"
+  apiKey: "AIzaSyDWdr1EtJADmqXh4Mk6owTSNvVC06OGeVQ",
+  authDomain: "ecommerce-900f5.firebaseapp.com",
+  databaseURL: "https://ecommerce-900f5-default-rtdb.firebaseio.com",
+  projectId: "ecommerce-900f5",
+  storageBucket: "ecommerce-900f5.appspot.com",
+  messagingSenderId: "707874434454",
+  appId: "1:707874434454:web:62ca3d52ebad3bbe9881b7",
+  measurementId: "G-SKDF19S665"
     }),
     AngularFireStorageModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -67,6 +67,11 @@ export class SubcategoriaFormComponent {
       return;
     }
 
+    if(dados.categoria == '') {
+      document.querySelector('#categoria')?.classList.add('has-error');
+      return;
+    }
+
     if (this.indice == ''){    
       this.subcategoria_service.salvar(dados);
     }else{

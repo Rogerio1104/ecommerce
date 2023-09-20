@@ -49,23 +49,22 @@ export class ProdutoFormComponent {
   }
 
   salvar() {
-    let dados = {
-      nome:this.nome,
-      descricao:this.descricao,
-      preco:this.preco,
-      categoria:this.categoria,
-      subcategoria:this.subcategoria
-    }
+    if(this.validarCampos()) {
+      let dados = {
+        nome:this.nome,
+        descricao:this.descricao,
+        preco:this.preco,
+        categoria:this.categoria,
+        subcategoria:this.subcategoria
+      }
 
-    if(dados.descricao == '') {
-      document.querySelector('#descricao')?.classList.add('has-error');
-      return;
-    }
-
-    if(this.indice == '') {
-      this.produto_service.salvar(dados);
+      if(this.indice == '') {
+        this.produto_service.salvar(dados);
+      } else {
+        this.produto_service.editar(this.indice,dados);
+      }
     } else {
-      this.produto_service.editar(this.indice,dados);
+      return;
     }
   }
 
@@ -135,5 +134,30 @@ export class ProdutoFormComponent {
         this.is_desabilidado = true;
       }
     });    
+  }
+
+  validarCampos() {
+    let isEmpty:boolean = false;
+    isEmpty = this.setCssClass('nome', this.nome === '');
+    isEmpty = this.setCssClass('preco', this.preco === '');
+    isEmpty = this.setCssClass('descricao', this.descricao === '');
+    isEmpty = this.setCssClass('categoria', this.categoria === '');
+    isEmpty = this.setCssClass('subcategoria', this.subcategoria === '');
+
+    return isEmpty;
+  }
+
+  setCssClass(field: string, isEmpty: boolean) {
+    const element = document.getElementById(field);
+    if (element) {
+      if (isEmpty) {
+        element.classList.add('has-error');
+        return true;
+      } else {
+        element.classList.remove('has-error');
+        return false;
+      }
+    }
+    return true;
   }
 }

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-10">
-        <h3>Clientes</h3>
+        <h3>Fornecedores</h3>
     </div>
     <div class="col-md-2 text-end">
         <button id="cadastrar" name="cadastrar" type="button" class="btn btn-success" routerLink="../form"  >Cadastrar</button>
@@ -11,25 +11,26 @@
     <thead>
         <tr>
             <th width="10%" class="text-center" scope="col">#</th>
-            <th width="49%" scope="col">Nome</th>
-            <th width="20%" scope="col">CPF</th>
+            <th width="60%" scope="col">Nome Fantas</th>
+            <th width="12%"  scope="col">CNPJ</th>
             <th width="3%"  scope="col"></th>
             <th width="3%"  scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cliente of dados">
+        <tr *ngFor="let fonecedores of dados">
             <td class="text-center" scope="row"><a href="#">01</a></td>
-            <td scope="row"><a href="#" class="text-primary">{{ cliente.nome }}</a></td>
-            <td scope="row"><a href="#" class="text-primary">{{ cliente.cpf }}</a></td>
+            <td scope="row"><a href="#" class="text-primary">{{ fonecedores.nmFantasia }}</a></td>
+            <td scope="row"><a href="#" class="text-primary">{{ fonecedores.cnpj }}</a></td>
             <td scope="row">
-                <button type="button" class="btn btn-primary " (click)="editar(cliente.indice)"><i class="bi bi-pencil-fill"></i></button>
+                <button type="button" class="btn btn-primary " (click)="editar(fonecedores.indice)"><i class="bi bi-pencil-fill"></i></button>
             </td>
             <td scope="row">
-                <button type="button" class="btn btn-danger" (click)="excluir(cliente.indice)"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-danger" (click)="excluir(fonecedores.indice)"><i class="bi bi-trash"></i></button>
             </td>
         </tr>
     </tbody>
     <tfoot>
     </tfoot>
 </table>
+
