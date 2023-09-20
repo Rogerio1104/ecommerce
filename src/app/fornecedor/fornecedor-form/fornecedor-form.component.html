@@ -12,13 +12,13 @@
     <div class="row ">
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="nmFantasia" class="form-label">Nome Fantasia * </label>
+                <label for="nmFantasia" class="form-label" style="color: red;">Nome Fantasia </label>
                 <input type="text" aria-label="nmFantasia" id="nmFantasia" name="nmFantasia" [(ngModel)]="nmFantasia" class="form-control">
             </div>
         </div>
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="logradouro" class="form-label">Logradouro (av,rua...) * </label>
+                <label for="logradouro" class="form-label " style="color: red;">Logradouro (av,rua...)  </label>
                 <input type="text" aria-label="logradouro" id="logradouro" name="logradouro" [(ngModel)]="logradouro" class="form-control">
             </div>
         </div>
@@ -26,13 +26,13 @@
     <div class="row ">
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="rzSocial" class="form-label">Razão Social * </label>
+                <label for="rzSocial" class="form-label">Razão Social  </label>
                 <input type="text" aria-label="rzSocial" id="rzSocial" name="rzSocial" [(ngModel)]="rzSocial" class="form-control">
             </div>
         </div>
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="complemento" class="form-label">Complemento * </label>
+                <label for="complemento" class="form-label">Complemento </label>
                 <input type="text" aria-label="complemento" id="complemento" name="complemento" [(ngModel)]="complemento" class="form-control">
             </div>
         </div>
@@ -40,13 +40,13 @@
     <div class="row ">
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="cnpj" class="form-label">CNPJ * </label>
+                <label for="cnpj" class="form-label" style="color: red;">CNPJ  </label>
                 <input type="text" aria-label="cnpj" id="cnpj" name="cnpj" [(ngModel)]="cnpj" class="form-control">
             </div>
         </div>
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="bairro" class="form-label">Bairro * </label>
+                <label for="bairro" class="form-label" style="color: red;">Bairro  </label>
                 <input type="text" aria-label="bairro" id="bairro" name="bairro" [(ngModel)]="bairro" class="form-control">
             </div>
         </div>
@@ -54,13 +54,13 @@
     <div class="row ">
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="contato" class="form-label">Contato * </label>
+                <label for="contato" class="form-label">Contato  </label>
                 <input type="text" aria-label="contato" id="contato" name="contato" [(ngModel)]="contato" class="form-control">
             </div>
         </div>
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="cidade" class="form-label">Cidade * </label>
+                <label for="cidade" class="form-label" style="color: red;">Cidade  </label>
                 <input type="text" aria-label="cidade" id="cidade" name="cidade" [(ngModel)]="cidade" class="form-control">
             </div>
         </div>
@@ -68,13 +68,13 @@
     <div class="row">
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="email" class="form-label">E-mail * </label>
+                <label for="email" class="form-label" style="color: red;">E-mail  </label>
                 <input type="text" aria-label="email" id="email" name="email" [(ngModel)]="email" class="form-control">
             </div>
         </div>
         <div class="col-md-5">
             <div class="mb-3">
-                <label for="estado" class="form-label">Estado: </label>
+                <label for="estado" class="form-label" style="color: red;" >Estado </label>
                 <select class="form-select form-select-sm form-control" aria-label="Small select example" name="estado" [(ngModel)]="estado">
                     <option  *ngFor="let estado of estados" [value]="estado.indice" [innerHTML]="estado.sigla"></option>
                 </select>
