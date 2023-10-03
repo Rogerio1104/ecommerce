@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
+import { RequisicaoService } from '../requisicao.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +8,16 @@ import { FirebaseService } from '../firebase.service';
 export class UsuariosService {
 
   constructor(
-    public firebase_service:FirebaseService
+    public firebase_service:FirebaseService,
+    private requisicao_service:RequisicaoService
   ) { }
 
   ref () {
     return this.firebase_service.ref().child('/usuarios');
   }
 
-  salvar(dados:any) {
-    this.ref().push(dados).then();
+  salvar(fd: FormData) {
+    return this.requisicao_service.post(fd,'usuario')
   }
 
   listar() {
@@ -30,9 +32,7 @@ export class UsuariosService {
     .then();
   }
 
-  editar(indice:string,dados:any){
-    this.ref().child('/' + indice)
-    .update(dados)
-    .then();
+  editar(indice:string,fd:FormData){
+
   }
 }

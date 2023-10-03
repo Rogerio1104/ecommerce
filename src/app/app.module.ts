@@ -37,6 +37,7 @@ import { FornecedorListarComponent } from './fornecedor/fornecedor-listar/fornec
 import { FornecedorFormComponent } from './fornecedor/fornecedor-form/fornecedor-form.component';
 import { EstadoListarComponent } from './estado/estado-listar/estado-listar.component';
 import { EstadoFormComponent } from './estado/estado-form/estado-form.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { EstadoFormComponent } from './estado/estado-form/estado-form.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AngularFireModule.initializeApp({
   apiKey: "AIzaSyDWdr1EtJADmqXh4Mk6owTSNvVC06OGeVQ",
   authDomain: "ecommerce-900f5.firebaseapp.com",

@@ -12,6 +12,7 @@ export class UsuariosFormComponent {
   public nome:string = "";
   public email:string = "";
   public senha:string = "";
+  public login:string = "";
 
   constructor(
     public usuario_service:UsuariosService,
@@ -32,32 +33,14 @@ export class UsuariosFormComponent {
   }
 
   salvar() {
-    let dados = {
-      nome:this.nome,
-      email:this.email,
-      senha:this.senha,
-    };
-
-
-    if(dados.nome == '') {
+    if(this.nome == ''){
       document.querySelector('#nome')?.classList.add('has-error');
       return;
     }
-
-    if(dados.email == '') {
-      document.querySelector('#email')?.classList.add('has-error');
-      return;
-    }
-
-    if(dados.senha == '') {
-      document.querySelector('#senha')?.classList.add('has-error');
-      return;
-    }
-
-    if (this.indice == ''){    
-      this.usuario_service.salvar(dados);
-    }else{
-      this.usuario_service.editar(this.indice,dados);
-    }
+    const fd = new FormData();
+    fd.append('nome',this.nome);
+    fd.append('email',this.email);
+    fd.append('login',this.login);
+    fd.append('senha',this.senha);
   }
 }
