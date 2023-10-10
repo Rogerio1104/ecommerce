@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../usuarios.service';
 import { Router } from '@angular/router';
 
@@ -7,15 +7,19 @@ import { Router } from '@angular/router';
   templateUrl: './usuarios-listar.component.html',
   styleUrls: ['./usuarios-listar.component.scss']
 })
-export class UsuariosListarComponent {
-  public dados:Array<any> = [];
+export class UsuariosListarComponent  implements OnInit{
+  public dados :Array <any> = [];
 
   constructor(
     public usuarios_service: UsuariosService,
     public router: Router
   ) {}
-
+ 
   ngOnInit(): void {
+      this.listar();
+  }
+
+  /*ngOnInit(): void {
     this.usuarios_service.listar()
     .on('value', (snapshot:any)=>{
       // Limpa variavel local com os dados
@@ -43,10 +47,13 @@ export class UsuariosListarComponent {
       );
     });
   }
+*/
+listar(){
+  this.usuarios_service.listar().subscribe((_dados : any) =>{ this.dados = _dados;});
+}
 
-
-  excluir(key:string){
-    this.usuarios_service.excluir(key);
+  excluir(_id: number){
+    return this.usuarios_service.excluir(_id).subscribe(()=>{this.listar();});
   }
 
   editar(key:string) {

@@ -16,23 +16,19 @@ export class UsuariosService {
     return this.firebase_service.ref().child('/usuarios');
   }
 
-  salvar(fd: FormData) {
+  salvar(fd: any) {
     return this.requisicao_service.post(fd,'usuario')
   }
 
   listar() {
-    return this.ref();
+    return this.requisicao_service.get('usuario/listar');
   }
 
-  excluir(indice:string){
-    this
-    .ref()
-    .child('/' + indice)
-    .remove()
-    .then();
+  excluir(_id: number){
+  return this.requisicao_service.del('/usuario/' + _id);
   }
 
-  editar(indice:string,fd:FormData){
+  editar(fd:any,indice:string){
 
   }
 }

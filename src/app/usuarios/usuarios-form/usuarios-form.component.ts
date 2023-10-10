@@ -27,6 +27,7 @@ export class UsuariosFormComponent {
         this.indice    = params.indice;
         this.nome      = dado.nome;
         this.email     = dado.email;
+        this.login     = dado.login;
         this.senha     = dado.senha;
       });
     });
@@ -37,10 +38,18 @@ export class UsuariosFormComponent {
       document.querySelector('#nome')?.classList.add('has-error');
       return;
     }
-    const fd = new FormData();
-    fd.append('nome',this.nome);
-    fd.append('email',this.email);
-    fd.append('login',this.login);
-    fd.append('senha',this.senha);
+    let dados ={
+      nome:this.nome,
+      email:this.email,
+      login:this.login,
+      senha:this.senha
+    }
+  
+    if (this.indice == ''){
+      this.usuario_service.salvar(dados).subscribe();
+    }else{
+      this.usuario_service.editar(dados,this.indice);
+    }
   }
+  
 }
