@@ -11,7 +11,7 @@ export class RequisicaoService {
   post(formData:any, ref: string){
     const httpOptions = {
       headers: new HttpHeaders({'Access-Control-Allow-Origin' : '*','Content-Type': 'application/json'})
-  };
+  }; 
     
     return this.http.post('http://localhost:8080/' + ref,formData,httpOptions);
 }
@@ -20,5 +20,14 @@ get(_rota:string = '/'){
 }
 del(_rota:string){
   return this.http.delete("http://localhost:8080/" + _rota);
+}
+put(formData:any, rota:string =''){
+  const httpOptions ={ 
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin' : '*',
+      'Content-Type': 'application/json'
+    })
+  };
+  return this.http.put('http://localhost:8080/' + rota,formData,httpOptions);
 }
 }

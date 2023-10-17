@@ -13,6 +13,7 @@ export class UsuariosFormComponent {
   public email:string = "";
   public senha:string = "";
   public login:string = "";
+  public id:number   = 0;
 
   constructor(
     public usuario_service:UsuariosService,
@@ -24,6 +25,7 @@ export class UsuariosFormComponent {
 
       this.usuario_service.ref().child('/' + params.indice).on('value', (snapshot:any) => {
         let dado:any   = snapshot.val();
+        this.id        = dado.id;
         this.indice    = params.indice;
         this.nome      = dado.nome;
         this.email     = dado.email;
@@ -48,7 +50,7 @@ export class UsuariosFormComponent {
     if (this.indice == ''){
       this.usuario_service.salvar(dados).subscribe();
     }else{
-      this.usuario_service.editar(dados,this.indice);
+      this.usuario_service.editar(dados,this.id).subscribe();
     }
   }
   

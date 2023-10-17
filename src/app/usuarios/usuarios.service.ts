@@ -28,7 +28,10 @@ export class UsuariosService {
   return this.requisicao_service.del('/usuario/' + _id);
   }
 
-  editar(fd:any,indice:string){
-
+  editar(fd:any,id:number){
+    return this.requisicao_service.put(fd,'usuario/' + id);
+  }
+  load(id:number){
+    return this.requisicao_service.get('/usuario/load/' + id);
   }
 }
