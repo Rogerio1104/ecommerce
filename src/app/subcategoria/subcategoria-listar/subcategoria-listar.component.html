@@ -1,33 +1,39 @@
-<div class="row">
-    <div class="col-md-10">
-        <h3>Subcategorias</h3>
-    </div>
-    <div class="col-md-2 text-end">
-        <button id="cadastrar" name="cadastrar" type="button" class="btn btn-success" routerLink="../form"  >Cadastrar</button>
-    </div>
+<div style="display:flex;justify-content: right;">
+    <button 
+        class="btn btn-primary"
+        routerLink="../form"
+    >
+        <span class="bi bi-plus"></span>
+        Novo
+    </button>
 </div>
-<hr>
-<table class="table datatable">
-    <thead>
-        <tr>
-            <th width="10%" class="text-center" scope="col">#</th>
-            <th width="69%" scope="col">Nome</th>
-            <th width="3%"  scope="col"></th>
-            <th width="3%"  scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let subcategoria of dados">
-            <td class="text-center" scope="row"><a href="#">01</a></td>
-            <td scope="row"><a href="#" class="text-primary">{{ subcategoria.descricao }}</a></td>
-            <td scope="row">
-                <button type="button" class="btn btn-primary " (click)="editar(subcategoria.indice)"><i class="bi bi-pencil-fill"></i></button>
-            </td>
-            <td scope="row">
-                <button type="button" class="btn btn-danger" (click)="excluir(subcategoria.indice)"><i class="bi bi-trash"></i></button>
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-    </tfoot>
+<!-- Table with hoverable rows -->
+<table class="table table-hover">
+<thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">Descrição</th>
+    <th scope="col">Categoria</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Excluir</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let subcategoria of dados">
+        <th scope="row">1</th>
+        <td>{{ subcategoria.descricao }}</td>
+        <td>{{ subcategoria.categoria }} </td>
+        <td>
+            <span 
+                class="bi bi-pencil-square"
+                (click)="editar(subcategoria.indice)"
+            ></span></td>
+        <td>
+            <span class="bi bi-trash" 
+                (click)="excluir(subcategoria.indice)"
+            ></span>
+        </td>
+    </tr>
+</tbody>
 </table>
+<!-- End Table with hoverable rows -->

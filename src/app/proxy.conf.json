@@ -1,8 +1,8 @@
 {
-   "/requisicao/*":{
-    "target": "http://localhost/miles/index.php",
-    "secure": false,
-    "changeOring":true,
-    "logLevel": "debug"
-   } 
+    "/requisicao/":{
+        "target": "http://localhost:8080/usuario",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }    
 }

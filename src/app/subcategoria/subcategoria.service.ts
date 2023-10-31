@@ -10,15 +10,17 @@ export class SubcategoriaService {
     public firebase_service:FirebaseService
   ) { }
 
-  ref () {
-    return this.firebase_service.ref().child('/subcategoria');
+  ref(){
+    return this.firebase_service
+    .ref()
+    .child('/subcategoria');
   }
 
-  salvar(dados:any) {
+  salvar(dados:any){
     this.ref().push(dados).then();
   }
 
-  listar() {
+  listar(){
     return this.ref();
   }
 
@@ -35,17 +37,4 @@ export class SubcategoriaService {
     .update(dados)
     .then();
   }
-
-  async get(indice:string){
-    let dado:any;
-    await this.ref().orderByKey()
-    .equalTo(indice)
-    .once('value')
-    .then( function(snapshot) {
-      if (snapshot.exists()) {
-          dado = Object.values(snapshot.val())[0];
-      }
-    });
-    return dado;
-  }  
 }

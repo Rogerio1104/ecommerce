@@ -1,5 +1,5 @@
-<!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
@@ -8,7 +8,20 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#administracao-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Administração</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="administracao-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/usuario">
+              <i class="bi bi-circle"></i><span>Usuário</span>
+            </a>
+          </li>
+        </ul>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#mercadoria-nav" data-bs-toggle="collapse" href="#">
@@ -16,13 +29,8 @@
         </a>
         <ul id="mercadoria-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/produto">
-              <i class="bi bi-circle"></i><span>Produtos</span>
-            </a>
-          </li>
-          <li>
             <a href="/categoria">
-              <i class="bi bi-circle"></i><span>Categorias</span>
+              <i class="bi bi-circle"></i><span>Categoria</span>
             </a>
           </li>
           <li>
@@ -30,28 +38,13 @@
               <i class="bi bi-circle"></i><span>Subcategoria</span>
             </a>
           </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#financeiro-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Financeiro</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="financeiro-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/forma-pagamento">
-              <i class="bi bi-circle"></i><span>Forma de Pagamento</span>
+            <a href="/produto">
+              <i class="bi bi-circle"></i><span>Produto</span>
             </a>
           </li>
         </ul>
-        <ul id="financeiro-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/pedido">
-              <i class="bi bi-circle"></i><span>Pedidos</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#comercial-nav" data-bs-toggle="collapse" href="#">
@@ -60,40 +53,28 @@
         <ul id="comercial-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/cliente">
-              <i class="bi bi-circle"></i><span>Clientes</span>
+              <i class="bi bi-circle"></i><span>Cliente</span>
             </a>
           </li>
-        </ul>
-        <ul id="comercial-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/fornecedor">
-              <i class="bi bi-circle"></i><span>Fornecedor</span>
+            <a href="/pedido">
+              <i class="bi bi-circle"></i><span>Pedido</span>
             </a>
           </li>
         </ul>
-        <ul id="comercial-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/estado">
-              <i class="bi bi-circle"></i><span>Estado</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#controle-usuario-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Controle de Usuário</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#financeiro-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Financeiro</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="controle-usuario-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="financeiro-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/usuarios">
-              <i class="bi bi-circle"></i><span>Usuarios</span>
+            <a href="/formapagamento">
+              <i class="bi bi-circle"></i><span>Forma de Pagamento</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Components Nav -->
-
-    
+      </li>
     </ul>
-
-  </aside><!-- End Sidebar-->
+  </aside>

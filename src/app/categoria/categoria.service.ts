@@ -10,15 +10,17 @@ export class CategoriaService {
     public firebase_service:FirebaseService
   ) { }
 
-  ref () {
-    return this.firebase_service.ref().child('/categoria');
+  ref(){
+    return this.firebase_service
+    .ref()
+    .child('/categoria');
   }
 
-  salvar(dados:any) {
+  salvar(dados:any){
     this.ref().push(dados).then();
   }
 
-  listar() {
+  listar(){
     return this.ref();
   }
 
