@@ -9,8 +9,17 @@
 </div>
 <form action="">
     <fieldset>
-        <input type="text" name="termo" [(ngModel)] = "termo"/>
-        <input type="button" value="Pesquisar" (click) = "pesquisar()"/>
+        <input 
+            type="text" 
+            name="termo" 
+            [(ngModel)] = "termo"
+            class="form-control"/>
+        
+         <input type="button" 
+            value="Pesquisar" 
+            (click) = "pesquisar()"
+            class="btn btn-primary"/>
+        
     </fieldset>
 </form>
 <!-- Table with hoverable rows -->
